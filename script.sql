@@ -19,7 +19,7 @@ FrequencyofPurchases varchar(50)
 );    
     
 
-COPY dev.public.shopping FROM 's3://zzetu/shopping.csv' IAM_ROLE 'arn:aws:iam::814268168807:role/your_redshift_role' FORMAT AS CSV DELIMITER ',' QUOTE '"' IGNOREHEADER 1 REGION AS 'us-east-1';
+COPY dev.public.shopping FROM 's3://zzetu/shopping.csv' IAM_ROLE 'arn:aws:iam::your-account-id:role/your-redshift-role' FORMAT AS CSV DELIMITER ',' QUOTE '"' IGNOREHEADER 1 REGION AS 'us-east-1';
 
 
 create table dim_customer (
