@@ -1,3 +1,27 @@
+
+create table shopping(
+CustomerID INT,	
+Age INT	,
+Gender varchar(50),
+Category varchar(50),
+Location varchar(50),
+Season varchar(50),
+ReviewRating REAL,	
+SubscriptionStatus varchar(50),
+PaymentMethod varchar(50),
+ShippingType varchar(50),
+DiscountApplied varchar(50),
+PromoCodeUsed varchar(50),
+PreviousPurchases int,	
+PreferredPaymentMethod	varchar(50),
+FrequencyofPurchases varchar(50)
+
+);    
+    
+
+COPY dev.public.shopping FROM 's3://zzetu/shopping.csv' IAM_ROLE 'arn:aws:iam::814268168807:role/your_redshift_role' FORMAT AS CSV DELIMITER ',' QUOTE '"' IGNOREHEADER 1 REGION AS 'us-east-1';
+
+
 create table dim_customer (
     CustomerID integer primary key,
     Age integer,
