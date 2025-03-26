@@ -84,6 +84,8 @@ group by t.Season, t.FrequencyofPurchases
 order by t.Season, PurchaseCount desc;
 
 -- Query to find products with high review ratings
-select avg(f.ReviewRating) as Avg_Rating
-from fact_purchases f
-order by Avg_Rating desc;
+SELECT Category, AVG(f.ReviewRating) AS AvgRating
+FROM fact_Purchases f
+JOIN shopping s ON f.CustomerID = s.CustomerID
+GROUP BY Category
+ORDER BY AvgRating DESC;
