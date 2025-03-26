@@ -1,5 +1,5 @@
-# Redshift-DE
-# Redshift Data Engineering Assignment
+
+# Redshift Data Warehousing
 
 ## Overview
 This project focuses on analyzing two key business processes using Amazon Redshift:
