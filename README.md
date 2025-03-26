@@ -22,7 +22,7 @@ This project focuses on analyzing two key business processes using Amazon Redshi
 
 3. **Create an S3 Bucket and Upload Data**
    - Navigate to **Amazon S3**.
-   - Create a new bucket (e.g., `shopping-data-bucket`).
+   - Create a new bucket (e.g., `zzetu`).
    - Upload `shopping_data.csv` to this bucket.
 
 ## Step 2: Loading Data into Redshift
@@ -50,7 +50,7 @@ CREATE TABLE shopping (
 3. **Copy data from S3 into Redshift**:
 ```sql
 COPY shopping
-FROM 's3://shopping-data-bucket/shopping_data.csv'
+FROM 's3://zzetu/shopping_data.csv'
 IAM_ROLE 'arn:aws:iam::your-account-id:role/your-redshift-role'
 FORMAT AS CSV
 IGNOREHEADER 1;
