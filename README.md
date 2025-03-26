@@ -129,8 +129,10 @@ ORDER BY t.Season, PurchaseCount DESC;
 
 ### **2. Products with High Review Ratings**
 ```sql
-SELECT AVG(f.ReviewRating) AS AvgRating
-FROM factPurchases f
+SELECT Category, AVG(f.ReviewRating) AS AvgRating
+FROM fact_Purchases f
+JOIN shopping s ON f.CustomerID = s.CustomerID
+GROUP BY Category
 ORDER BY AvgRating DESC;
 ```
 
